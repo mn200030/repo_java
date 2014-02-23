@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Sample Page</title>
+        <script type="text/javascript" src="scripts/jquery-1.11.0.min.js"></script>
+    </head>
+    <body>
+      <div id="notify_message" style="color:red">
+      </div>
+      <div id="reserve_list">
+      </div>
+    </body>
+<script type="text/javascript">
+     (function() {
+	 var socket = new WebSocket("ws://localhost:8080/ws/reserve?accountId=1&storeId=1");
+
+	 socket.onopen = function(e) {
+	     console.log("open websocket");
+	 }
+
+         socket.onmessage = function(message) {
+             var html = $('#reserve_list').html(),
+                 reserve = JSON.parse(message.data),
+                 datetime = new Date(reserve.reserveTime),
+                 message = reserve.message,
+                 yyyymmdd = datetime.getFullYear() + "/" + (datetime.getMonth()+1) + "/" + datetime.getDate() + " " + datetime.getHours() + ":" + datetime.getMinutes(),
+                 now = new Date();
+
+             $('#notify_message').html(now.getHours() + ":" + now.getMinutes() + ' ' + '新規予約が入りました');
+             $('#notify_message').fadeOut(500,function(){
+                     $(this).fadeIn(500);
+                     $(this).fadeOut(500);
+                     $(this).fadeIn(500);
+                     $(this).fadeOut(500);
+                     $(this).fadeIn(500);
+             });
+
+             html += ('<div>' + yyyymmdd + ' ' + message + '</div>');
+             $('#reserve_list').html(html);
+         }
+
+         function sleep( T ){ 
+             var d1 = new Date().getTime(); 
+             var d2 = new Date().getTime(); 
+             while( d2 < d1+100*T ){    //T秒待つ 
+                  d2=new Date().getTime(); 
+             } 
+             return; 
+         } 
+     })();
+</script>
+</html>
+

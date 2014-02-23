@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="lib/cdi-api-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/el-api-2.2.jar"/>
+	<classpathentry kind="lib" path="lib/grizzly-framework-2.3.10.jar"/>
+	<classpathentry kind="lib" path="lib/grizzly-http-2.3.10.jar"/>
+	<classpathentry kind="lib" path="lib/grizzly-http-server-2.3.10.jar"/>
+	<classpathentry kind="lib" path="lib/javax.ejb-api-3.2.jar"/>
+	<classpathentry kind="lib" path="lib/javax.inject-1.jar"/>
+	<classpathentry kind="lib" path="lib/javax.transaction-api-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/javax.websocket-api-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/jboss-interceptors-api_1.1_spec-1.0.0.Beta1.jar"/>
+	<classpathentry kind="lib" path="lib/jsr250-api-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/tyrus-client-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/tyrus-container-glassfish-cdi-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/tyrus-container-grizzly-client-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/tyrus-container-servlet-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/tyrus-core-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/tyrus-server-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/tyrus-spi-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/tyrus-container-grizzly-server-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/javax.websocket-api-1.0-rc5.jar"/>
+	<classpathentry kind="lib" path="lib/slog.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-annotations-2.2.3.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.2.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Sample Page</title>
+    </head>
+    <body>
+        <h1>サンプル</h1>
+        <p id="msg">message...</p>
+        <input type="text" id="text1">
+        <input type="button" id="sendButton" value="send">
+    </body>
+<script type="text/javascript">
+     (function() {
+	 var socket = new WebSocket("ws://localhost:8080/ws/reserve"),
+             sendButton = document.getElementById('sendButton'),
+             text1 = document.getElementById('text1'),
+             obj = {
+                 accountId: 1,
+                 storeId: 1,
+                 message: null,
+                 reserveTime:null
+             };
+
+	 socket.onopen = function(e) {
+	     console.log("open websocket");
+	 }
+	 
+	 sendButton.addEventListener('click', function(e) {
+             var value = text1.value;
+             if (value == null || value.length < 1) {
+                 return;
+             }
+             obj.message = value;
+             obj.reserveTime = new Date().getTime();
+             socket.send(JSON.stringify(obj));
+	 });
+     })();
+</script>
+</html>
+

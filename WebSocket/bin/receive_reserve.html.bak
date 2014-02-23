@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Sample Page</title>
+        <script type="text/javascript" src="scripts/jquery-1.11.0.min.js" />
+    </head>
+    <body>
+      リスト
+      <div id="reserve_list">
+      </div>
+    </body>
+<script type="text/javascript">
+     (function() {
+	 var socket = new WebSocket("ws://localhost:8080/ws/reserve?accountId=1&storeId=1");
+
+	 socket.onopen = function(e) {
+	     console.log("open websocket");
+	 }
+
+         socket.onmessage = function(message) {
+             var html = $('#reserve_list').html();
+             html += ('<div>' + message.data + '</div>');
+             $('#reserve_list').html(html);
+         }
+     })();
+</script>
+</html>
+
